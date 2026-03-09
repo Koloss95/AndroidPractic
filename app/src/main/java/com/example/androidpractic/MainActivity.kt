@@ -22,9 +22,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidpractic.ui.theme.AndroidPracticTheme
 
-
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            Surface(color = MaterialTheme.colorScheme.background) {
+                Quadrant()
+            }
+        }
+    }
+}
 @Composable
-fun ComposeQuadrantApp() {
+fun Quadrant() {
     Row(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -106,6 +115,6 @@ fun QuadrantCard(
 
 @Preview(showBackground = true)
 @Composable
-fun ComposeQuadrantPreview() {
-    ComposeQuadrantApp()
+fun QuadrantPreview() {
+    Quadrant()
 }
