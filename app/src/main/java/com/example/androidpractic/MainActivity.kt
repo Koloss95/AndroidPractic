@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,29 +17,86 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidpractic.ui.theme.AndroidPracticTheme
+import org.intellij.lang.annotations.JdkConstants
 
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            AndroidPracticTheme {
+//                Surface(color = MaterialTheme.colorScheme.background) {
+//                    ComposeArticleScreen(
+//                        fstring = "Jetpack Compose tutorial",
+//                        tstring = "Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.",
+//                        thstring = "In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.",
+//                    )
+//                }
+//            }
+//        }
+//    }
+//}
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidPracticTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
-                    ComposeArticleScreen(
-                        fstring = "Jetpack Compose tutorial",
-                        tstring = "Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.",
-                        thstring = "In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.",
-                    )
+                    TaskM(
+                        fstring = "All tasks completed",
+                        tstring = "Nice work!"
+                                )
                 }
             }
         }
     }
 }
-
+//@Composable
+//fun TaskM(fstring: String, tstring: String) {
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Center,
+//
+//        )
+//    {
+//
+//        Image(
+//            painter = painterResource(R.drawable.ic_task_completed),
+//            contentDescription = null,
+//                              )
+//        Text(
+//            text = fstring,
+//            fontSize = 24.sp,
+//            textAlign = TextAlign.Center,
+//            fontWeight = FontWeight.Bold,
+//            modifier = Modifier
+//                .padding(top = 24.dp, bottom = 8.dp)
+//        )
+//        Text(
+//            text = tstring,
+//            textAlign = TextAlign.Center,
+//            fontSize = 16.sp
+//        )
+//
+//    }
+//}
+//@Preview(showBackground = true)
+//@Composable
+//fun TaskM() {
+//    AndroidPracticTheme {
+//        TaskM(
+//            fstring = "All tasks completed",
+//            tstring = "Nice work!",
+//                    )
+//    }
+//}
